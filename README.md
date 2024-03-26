@@ -7,5 +7,8 @@
   <a href="http://wiki.sleuthkit.org/index.php?title=The_Sleuth_Kit_commands">
     <img src="https://img.shields.io/badge/Forensics%20Site-The%20Sleuth%20Kit-blue" alt="SleuthKit">
   </a>
+  <a href="https://exiftool.org/exiftool_pod.html">
+    <img src="https://img.shields.io/badge/Forensics%20Site-Exiftool%20-blue" alt="SleuthKit">
+  </a>
 </div>
 
