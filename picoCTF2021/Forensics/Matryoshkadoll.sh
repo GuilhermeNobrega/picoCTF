@@ -8,4 +8,5 @@ string
 binwalk
 foremost
 exitfool
+steghide
 (Estudar isso para resolver o ctf)
