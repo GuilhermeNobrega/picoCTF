@@ -1,0 +1,4 @@
+Description
+Download the packet capture file and use packet analysis software to find the flag.
+https://artifacts.picoctf.net/c/195/network-dump.flag.pcap
+(Utilizando o wireshark fora linux mesmo)
