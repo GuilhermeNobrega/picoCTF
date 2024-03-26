@@ -1,5 +1,5 @@
 Disk, disk, sleuth! II
-
+This disk can also be booted with qemu!
 Description
 All we know is the file with the flag is named `down-at-the-bottom.txt`... Disk image:
 wget https://mercury.picoctf.net/static/9061ae8456a4ff51098c5183d910a080/dds2-alpine.flag.img.gz
