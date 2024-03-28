@@ -2,3 +2,75 @@ Description
 Download the packet capture file and use packet analysis software to find the flag.
 https://artifacts.picoctf.net/c/195/network-dump.flag.pcap
 (Utilizando o wireshark fora linux mesmo)
+
+Vamos explicar alguns conceitos importantes: 
+- Endereço MAC: Endereço de 48 bits utilizado para identificação de host (dispositivos) em uma rede.
+- ARP: O protocolo Adress Resolution Protocol (ARP) é utilizado para:
+
+Solicitação ARP (ARP Request):
+
+Quando um dispositivo precisa enviar dados para outro dispositivo na mesma rede local, mas só conhece o endereço IP de destino, ele emite uma solicitação ARP.
+Essa solicitação ARP contém o endereço IP de destino para o qual o dispositivo está tentando enviar dados.
+A solicitação ARP é então transmitida para todos os dispositivos na rede local.
+
+Resposta ARP (ARP Reply):
+
+O dispositivo que possui o endereço IP alvo responde à solicitação ARP com seu próprio endereço MAC.
+Esta resposta ARP contém o endereço IP solicitado e o endereço MAC correspondente.
+O dispositivo que emitiu a solicitação ARP recebe essa resposta e agora sabe qual é o endereço MAC associado ao endereço IP desejado.
+
+Este processo é fundamental para a comunicação eficiente em redes locais,
+permitindo que os dispositivos determinem os endereços MAC uns dos outros para encaminhar dados corretamente na camada de link de dados (camada 2 do modelo OSI).
+
+
+O processo de "SYN" (Synchronize) e "ACK" (Acknowledgment) é parte do estabelecimento de uma conexão TCP (Transmission Control Protocol) em redes de computadores.
+TCP é um dos principais protocolos usados para comunicação na Internet e em redes locais. Aqui está uma explicação de como funciona:
+
+SYN (Synchronize):
+
+Quando um cliente deseja iniciar uma conexão TCP com um servidor, ele envia um pacote SYN para o servidor.
+Este pacote SYN contém o número de sequência inicial escolhido pelo cliente para aquela conexão. O número de sequência é usado para rastrear os bytes de dados enviados em cada direção da conexão.
+O cliente espera que o servidor responda com um pacote SYN-ACK.
+SYN-ACK (Synchronize-Acknowledgment):
+
+Quando o servidor recebe o pacote SYN, ele responde com um pacote SYN-ACK.
+O pacote SYN-ACK também contém um número de sequência inicial, que é escolhido pelo servidor.
+Além disso, o pacote SYN-ACK também confirma o número de sequência que o cliente escolheu, reconhecendo o pacote SYN recebido.
+ACK (Acknowledgment):
+
+Finalmente, quando o cliente recebe o pacote SYN-ACK do servidor, ele responde com um pacote ACK.
+Este pacote ACK confirma o número de sequência que o servidor escolheu, reconhecendo o pacote SYN-ACK recebido.
+A partir deste momento, a conexão TCP é estabelecida e ambas as partes podem começar a trocar dados de forma confiável.
+Este processo de três vias (SYN, SYN-ACK, ACK) é conhecido como o handshake de três vias e é usado para estabelecer uma conexão TCP confiável entre um cliente e um servidor
+
+PSH (Push) no TCP indica que todos os dados recebidos até o momento devem ser passados imediatamente para a camada de aplicação, sem aguardar por mais dados. 
+Isso significa que o receptor deve entregar os dados à aplicação receptora assim que receber o segmento TCP com o bit PSH ativado, mesmo que não tenha recebido todos os dados da conexão.
+
+Ethernet II, Src: PCSSystemtec_af:39:9f (08:00:27:af:39:9f), Dst: PCSSystemtec_93:ce:73 (08:00:27:93:ce:73)
+    Destination: PCSSystemtec_93:ce:73 (08:00:27:93:ce:73)
+        Address: PCSSystemtec_93:ce:73 (08:00:27:93:ce:73)
+        .... ..0. .... .... .... .... = LG bit: Globally unique address (factory default)
+        .... ...0 .... .... .... .... = IG bit: Individual address (unicast)
+    Source: PCSSystemtec_af:39:9f (08:00:27:af:39:9f)
+        Address: PCSSystemtec_af:39:9f (08:00:27:af:39:9f)
+        .... ..0. .... .... .... .... = LG bit: Globally unique address (factory default)
+        .... ...0 .... .... .... .... = IG bit: Individual address (unicast)
+    Type: IPv4 (0x0800)
+Internet Protocol Version 4, Src: 10.0.2.15, Dst: 10.0.2.4
+Transmission Control Protocol, Src Port: 48750, Dst Port: 9000, Seq: 1, Ack: 1, Len: 60
+Data (60 bytes)
+
+no Src e Dst são de onde vem e para onde vai, em formato MAC
+
+No PSH (push) ele passa TODAS as informações para nós, veja:
+
+0000   08 00 27 93 ce 73 08 00 27 af 39 9f 08 00 45 00   ..'..s..'.9...E.
+0010   00 70 50 c2 40 00 40 06 d1 b3 0a 00 02 0f 0a 00   .pP.@.@.........
+0020   02 04 be 6e 23 28 27 ec d4 b7 bd 26 99 bc 80 18   ...n#('....&....
+0030   01 f6 18 75 00 00 01 01 08 0a 8d cf e9 65 68 f0   ...u.........eh.
+0040   f1 c3 70 20 69 20 63 20 6f 20 43 20 54 20 46 20   ..p i c o C T F 
+0050   7b 20 70 20 34 20 63 20 6b 20 33 20 37 20 5f 20   { p 4 c k 3 7 _ 
+0060   35 20 68 20 34 20 72 20 6b 20 5f 20 62 20 39 20   5 h 4 r k _ b 9 
+0070   64 20 35 20 33 20 37 20 36 20 35 20 7d 0a         d 5 3 7 6 5 }.
+
+picoCTF{p4ck37_5h4rk_b9d53765}
