@@ -12,11 +12,13 @@
   </a>
 </div>
 
-<p>
+<p align="center"
  <a href="https://www.wireshark.org/docs/wsug_html/#ChBuildInstallNpcapUpdate">
     <img src="https://img.shields.io/badge/Wireshark-blue" alt="SleuthKit">
   </a>
-</p>
+ <a href="https://www.wireshark.org/docs/wsug_html_chunked/index.html">
+    <img src="https://img.shields.io/badge/WiresharkUserGuide-blue" alt="SleuthKit">
+  </a>
 <hr>
 
 | Categoria     | Ferramenta  | Descrição                                                                  |
