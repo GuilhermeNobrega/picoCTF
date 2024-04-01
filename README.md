@@ -11,6 +11,12 @@
     <img src="https://img.shields.io/badge/Forensics%20Site-ExiftoolKit-blue" alt="SleuthKit">
   </a>
 </div>
+
+<p>
+ <a href="https://www.wireshark.org/docs/wsug_html/#ChBuildInstallNpcapUpdate">
+    <img src="https://img.shields.io/badge/Wireshark-blue" alt="SleuthKit">
+  </a>
+</p>
 <hr>
 
 | Categoria     | Ferramenta  | Descrição                                                                  |
