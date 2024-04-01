@@ -1,3 +1,29 @@
 Can you find the flag?
 https://mercury.picoctf.net/static/b44842413a0834f4a3619e5f5e629d05/shark1.pcapng
 
+Para conseguir fazer o desafio, primeiro olhei os pacotes ARP (Que fazem buscas do endereço MAC de determinada máquina) e achei isso:
+
+Sender MAC address: 02:fb:68:4c:e9:41 (02:fb:68:4c:e9:41)
+Sender IP address: 192.168.38.1
+Target MAC address: 00:00:00_00:00:00 (00:00:00:00:00:00)
+Target IP address: 192.168.38.104
+
+Com esses ips e endereços em mãos, podemos procurar nossa flag..
+Por vontade, pesquisei pelo endereço mac que está enviando algo:
+
+eth.addr==02:fb:68:4c:e9:41
+
+827	7.236537	18.222.37.134	192.168.38.104	HTTP	384	HTTP/1.1 200 OK  (text/html)
+Neste pacote achei:
+Gur synt vf cvpbPGS{c33xno00_1_f33_h_qrnqorrs}
+Pela lógica de comparar as letras com o alfabeto, percebo que tem um root 13 aí. Logo:
+
+echo "Gur synt vf cvpbPGS{c33xno00_1_f33_h_qrnqorrs}" | tr 'a-zA-Z' 'n-za-mN-ZA-M'
+The flag is picoCTF{p33kab00_1_s33_u_deadbeef}
+
+Outros comandos legais:
+
+ip.addr == ip (Buscar ip específico nos pacotes)
+eth.addr==02:fb:68:4c:e9:41 (endereço mac)
+ip.dst == 192.168.38.104 (ip de destino)
+http.request.method == "POST" (procure o metodo post do http)
