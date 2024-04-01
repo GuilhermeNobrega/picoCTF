@@ -28,3 +28,4 @@ eth.addr==02:fb:68:4c:e9:41 (endereço mac)
 ip.dst == 192.168.38.104 (ip de destino)
 http.request.method == "POST" (procure o metodo post do http)
 frame contains "text/html" (Esta expressão irá filtrar pacotes onde o conteúdo (payload) contém a string "text/html")
+data-text-lines
