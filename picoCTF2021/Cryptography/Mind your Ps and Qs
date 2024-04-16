@@ -1,3 +1,4 @@
 Description
 In RSA, a small e value can be problematic, but what about N? Can you decrypt this?
 
+https://medium.com/@cjohngalvan/picoctf-mind-your-ps-and-qs-24d79a0ec04e
