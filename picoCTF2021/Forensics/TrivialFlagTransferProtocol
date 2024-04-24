@@ -1,5 +1,18 @@
 Figure out how they moved the flag.
 
+
+Os bytes que representam a largura e a altura de uma imagem BMP estão localizados na parte do cabeçalho de informações da imagem, que começa com 28 00 00 00 no byte 14.
+
+Os bytes a seguir representam a largura (5D 02 00 00) e a altura (C6 01 00 00) da imagem.
+
+Vamos converter esses valores de hexadecimal para decimal para entender as dimensões:
+
+A largura está representada pelos bytes 5D 02 00 00, que em decimal é 605.
+A altura está representada pelos bytes C6 01 00 00, que em decimal é 454.
+
+Portanto, a imagem bitmap tem uma largura de 605 pixels e uma altura de 454 pixels.
+
+
 5D 02 00 00 C6 01 00 00
 
 5D 02 00 00 largura = 605 pixels
@@ -35,3 +48,7 @@ TFTPDOESNTENCRYPTOURTRAFFICSOWEMUSTDISGUISEOURFLAGTRANSFER.FIGUREOUTAWAYTOHIDETH
 
 cat plan  | tr a-zA-Z n-za-mN-ZA-M
 IUSEDTHEPROGRAMANDHIDITWITH-DUEDILIGENCE.CHECKOUTTHEPHOTOS
+
+"I USED THE PROGRAM AND HID IT WITH - DUE DILIGENCE. CHECK OUT THE PHOTOS."
+
+
