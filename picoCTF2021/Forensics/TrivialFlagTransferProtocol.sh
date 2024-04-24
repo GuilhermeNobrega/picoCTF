@@ -52,3 +52,15 @@ IUSEDTHEPROGRAMANDHIDITWITH-DUEDILIGENCE.CHECKOUTTHEPHOTOS
 "I USED THE PROGRAM AND HID IT WITH - DUE DILIGENCE. CHECK OUT THE PHOTOS."
 
 
+
+sudo apt-get install ./program.deb
+
+
+ steghide extract -sf picture2.bmp -p "DUEDILIGENCE"
+steghide: could not extract any data with that passphrase!
+
+ steghide extract -sf picture3.bmp -p "DUEDILIGENCE"
+wrote extracted data to "flag.txt".
+
+cat flag.txt
+picoCTF{h1dd3n_1n_pLa1n_51GHT_18375919}
