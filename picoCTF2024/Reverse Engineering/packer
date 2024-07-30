@@ -1,0 +1,3 @@
+wget https://artifacts.picoctf.net/c_titan/22/out
+ls -la (ls -all)
+chmod +x out
