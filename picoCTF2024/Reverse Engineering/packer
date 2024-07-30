@@ -1,3 +1,19 @@
 wget https://artifacts.picoctf.net/c_titan/22/out
 ls -la (ls -all)
 chmod +x out
+strings out
+------------------------------------------------------------------------------
+$Info: This file is packed with the UPX executable packer http://upx.sf.net $
+------------------------------------------------------------------------------
+( -d     decompress                        -l    list compressed file)
+upx -d out
+
+strings out | grep -n flag
+4074:Password correct, please see flag: 7069636f4354467b5539585f556e5034636b314e365f42316e34526933535f35646565343434317d
+
+echo -n "7069636f4354467b5539585f556e5034636b314e365f42316e34526933535f35646565343434317d" | xxd -r -p
+picoCTF{U9X_UnP4ck1N6_B1n4Ri3S_5dee4441}
+
+A opção -p no xxd serve para tratar a entrada ou saída como um fluxo contínuo de dígitos hexadecimais, sem nenhum espaçamento adicional ou formatação. 
+Isso é especialmente útil quando você está lidando com strings hexadecimais compactas e deseja convertê-las diretamente sem interferências de formatação.
+Opção -r converte de hex para binario ou ascii
